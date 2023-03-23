@@ -42,6 +42,7 @@ li {
     width: 100%;
     max-width: 800px;
     margin: 0 auto;
+    padding: 0 12px;
 }
 
 .text--purple {
@@ -52,9 +53,11 @@ section:nth-child(even) {
     background-color: #f8f8f8;
 }
 
-.section_title {
+.section__title {
     margin-bottom: 20px;
 }
+
+
 /*NAVIGATION BAR*/
 
 nav {
@@ -65,6 +68,7 @@ nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    padding: 0 12px;
 }
 
 .nav__link--list {
@@ -105,12 +109,12 @@ nav {
     flex-direction: column;
 }
 
-.about-me_info {
+.about-me__info {
     display: flex;
     flex-direction: column;
 }
 
-.about-me_info--container {
+.about-me__info--container {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -119,32 +123,32 @@ nav {
     text-align: center;
 }
 
-.about-me_picture--mask {
-    width: 100px;
-    height: 100px;
-    border-radius: 50%;
+.about-me__picture--mask {
+    width: 250px;
+    height: 250px;
+    border-radius: 20%;
     overflow: hidden;
     box-shadow: 0 8px 16px rgb(0, 0, 0, 0.16);
     margin-bottom: 28px;
 }
 
-.about-me_picture {
+.about-me__picture {
     width: 100%;
     /*impruving my own picture*/
     transform: scale(1.5);
-    padding-bottom: 20px;
+    padding-top: 20px;
 }
 
-.about-me_info--title {
+.about-me__info--title {
     margin-bottom: 16px;
 }
 
-.about-me_info--para {
+.about-me__info--para {
     font-size: 20px;
     margin-bottom: 28px;
 }
 
-.about-me_links {
+.about-me__links {
     font-size: 20px;
     color: #242424;
     text-decoration: none;
@@ -152,17 +156,17 @@ nav {
     margin-bottom: 28px;
 }
 
-.about-me_img--container {
+.about-me__img--container {
     flex: 1;
     display: flex;
     align-items: center;
 }
 
-.about-me_img {
+.about-me__img {
     width: 100%;
 }
 
-/* TECH STACK */
+/* Список технологий */
 
 .languages_img {
     width: 100%;
@@ -188,14 +192,12 @@ nav {
     justify-content: center;
     align-items: center;
     padding: 25px 16px;
-    
 }
 
 .languages_list {
     display: flex;
     width: 100%;
     flex-wrap: wrap;
-
 }
 
 .languages_name {
@@ -210,4 +212,95 @@ nav {
 .languages:hover .languages_name {
     transform: scale(1);
     opacity: 1;
+}
+
+
+/* Проэкты  */
+
+.project {
+    margin-bottom: 135px;
+}
+
+.project:last-child {
+    margin-bottom: 40px;
+}
+
+.project__img {
+    width: 100%;
+    transition: all 500ms ease;
+}
+
+.project__wrapper {
+    box-shadow: 0 20px 80px rgba(0, 0, 0, 0.45);
+    border-radius: 20px;
+    overflow: hidden;
+    position: relative;
+}
+
+.project__wrapper:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: #1c1d25;
+    opacity: 0;
+    transition: opacity 450ms ease;
+    z-index: 2;
+}
+
+.project:hover .project__wrapper:before {
+    opacity: 0.7;
+}
+
+.project:hover .project__img {
+    transform: scale(1.07);
+    filter: blur(5px);
+}
+
+.projects__list {
+    padding-top: 40px;
+}
+
+.project:hover .project__description {
+    opacity: 1;
+    transform: translateY(-50%);
+}
+
+.project__description {
+    position: absolute;
+    top: 50%;
+    left: 90px;
+    max-width: 550px;
+    z-index: 3;
+    opacity: 0;
+    transition: transform 450ms, opacity 300ms;
+}
+
+.project__description--title {
+    font-size: 35px;
+}
+
+.project__description--para {
+    margin: 16px 0;
+}
+
+.project__description--link {
+    font-size: 20px;
+    margin-right: 16px;
+    text-decoration: none;
+}
+
+.project__description--link:last-child {
+    margin-right: 0;
+}
+
+
+.project__description--title,
+.project__description--sub-title,
+.project__description--para,
+.project__description--link {
+    text-align: left;
+    color: #fff;
 }
